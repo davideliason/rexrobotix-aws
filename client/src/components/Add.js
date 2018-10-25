@@ -16,7 +16,6 @@ class Add extends Component {
     this.handleNameChange = this.handleNameChange.bind(this);
     this.handQuoteChange = this.handQuoteChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
-
     this.handleOpenModal = this.handleOpenModal.bind(this);
     this.handleCloseModal = this.handleCloseModal.bind(this);
   }
@@ -68,7 +67,7 @@ class Add extends Component {
   render() {
     return (
       <div>
-       <Button bsStyle="success" bsSize="small" onClick={this.handleOpenModal}><span className="glyphicon glyphicon-plus"></span></Button>
+       <Button bsStyle="success" bsSize="small" onClick={this.handleOpenModal}><span className="glyphicon glyphicon-plus">Add Quote</span></Button>
          <Modal 
             isOpen={this.state.showModal} 
             contentLabel="name">

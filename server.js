@@ -23,7 +23,7 @@ MongoClient.connect(uri, { useNewUrlParser: true }, (err, database) => {
     console.log("db connection");
     db = database.db('rexrobotix-aws');
 
-    app.get('/api/users', (req,res) => {
+    app.get('/api/quotes', (req,res) => {
         // res.json([{
         //     id: 1,
         //     username: "David"
@@ -32,15 +32,15 @@ MongoClient.connect(uri, { useNewUrlParser: true }, (err, database) => {
         //     username: "Johnny"
         // }]);
 
-        db.collection('users').find().toArray( (err,users)=>{
-            // res.render('index.ejs', { users: quotes})
+        db.collection('quotes').find().toArray( (err,quotes)=>{
+            // res.render('index.ejs', { quotes: quotes})
   
             // back to serving data as JSON as API
-            res.json(users);
+            res.json(quotes);
         });
     });
 
-    app.post('/newUserInfo', (req,res)=>{
+    app.post('/newquote', (req,res)=>{
         db.collection('users').insertOne(
             {
             "_id" : req.body.name + req.body.quote,

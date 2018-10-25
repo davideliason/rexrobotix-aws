@@ -55,6 +55,7 @@ Express server is at port 8080, and the react client uses a proxy to connect to 
 6.0 Server-side
   6.1 created simple express server instance and spun up on 8080, route53 worked correctly displaying server output with mongoDB connection accessing collection
   6.2 created CRA build on remote server, then spun up server to serve those files
+  6.3 
   
 
 
