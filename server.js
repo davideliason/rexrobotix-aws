@@ -46,8 +46,10 @@ MongoClient.connect(uri, { useNewUrlParser: true }, (err, database) => {
             "_id" : req.body.name + req.body.quote,
 			 "name" : req.body.name,
 			 "quote" : req.body.quote
-            }
-        )
+            });
+
+            console.log("new quote posted" + req.body.name);
+		    res.send('name added successfully');
     })
 
     // Catchall handler for any other requests --> CRA index.html

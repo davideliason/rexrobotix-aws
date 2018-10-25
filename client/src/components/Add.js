@@ -45,7 +45,7 @@ class Add extends Component {
       quote : this.state.quote
      };
 
-    fetch('/newQuote', {
+    fetch('/newquote', {
       method : 'POST',
       headers: {
                 'Accept': 'application/json',
