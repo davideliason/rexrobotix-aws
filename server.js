@@ -16,6 +16,7 @@ app.get('/api/users', (req,res) => {
     }]);
 });
 
+// Catchall handler for any other requests --> CRA index.html
 app.get('*', (req, res) => {
     res.sendFile(path.join(__dirname+'/client/build/index.html'));
   });
