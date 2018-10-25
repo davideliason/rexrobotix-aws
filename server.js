@@ -40,17 +40,18 @@ MongoClient.connect(uri, { useNewUrlParser: true }, (err, database) => {
         });
     });
 
-    app.post('/newquote', (req,res)=>{
-        db.collection('users').insertOne(
-            {
-            "_id" : req.body.name + req.body.quote,
+    app.post('/newquote', (req,res) => {
+        console.log(req);
+		db.collection('quotes').insertOne(
+			{
+			 "_id" : req.body.name + req.body.quote,
 			 "name" : req.body.name,
 			 "quote" : req.body.quote
-            });
+			 });
 
-            console.log("new quote posted" + req.body.name);
-		    res.send('name added successfully');
-    })
+		console.log("new quote posted" + req.body.name);
+		res.send('name added successfully');
+	});
 
     // Catchall handler for any other requests --> CRA index.html
     app.get('*', (req, res) => {

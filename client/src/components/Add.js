@@ -72,7 +72,7 @@ class Add extends Component {
             isOpen={this.state.showModal} 
             contentLabel="name">
            <h3>Add a quote</h3>
-           <form action="/newQuote" method="POST" onSubmit={this.handleSubmit}>
+           <form action="/newquote" method="POST" onSubmit={this.handleSubmit}>
            <input
                 type="text"
                 placeholder="your name"
