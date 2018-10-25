@@ -1,15 +1,25 @@
-const express = require('express')
-require('dotenv').config()
+const express = require('express');
+const path = require('path');
 
-const app = express()
-const port = process.env.PORT || 8080;
-const test = process.env.TEST;
+const app = express();
 
-app.get('/', (req,res) => {
-    res.end("hello world");
+app.use(express.static(path.join(__dirname, 'client/build')));
+
+app.get('/api/users', (req,res) => {
+    res.json([{
+        id: 1,
+        username: "David"
+    }, {
+        id: 2,
+        username: "Johnny"
+    }]);
 });
 
-app.listen(port, () => {
-    console.log(`server at ${port}`)
-    console.log(test);
-});
+app.get('*', (req, res) => {
+    res.sendFile(path.join(__dirname+'/client/build/index.html'));
+  });
+
+  const port = process.env.PORT || 8080;
+  app.listen(port);
+  
+  console.log(`Server listening on ${port}`);
