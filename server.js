@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const mongo = require('mongodb');
 const MongoClient = require('mongodb').MongoClient;
+const bodyParser = require('body-parser');
+const logger = require('morgan');
 
 require('dotenv').config()
 
@@ -9,6 +11,11 @@ const app = express();
 const port = process.env.PORT || 8080;
 const test = process.env.TEST;
 const uri = process.env.DB_MLAB;
+
+// APP CONFIG
+app.use(logger('dev'));
+app.use(bodyParser.json());
+app.use(bodyParser.urlencoded({ extended:true }));
 
 app.use(express.static(path.join(__dirname, 'client/build')));
 
