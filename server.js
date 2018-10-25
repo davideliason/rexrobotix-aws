@@ -1,5 +1,6 @@
 const express = require('express');
 const path = require('path');
+require('dotenv').config()
 
 const app = express();
 
@@ -20,6 +21,8 @@ app.get('*', (req, res) => {
   });
 
   const port = process.env.PORT || 8080;
+  const test = process.env.TEST;
   app.listen(port);
   
+  console.log(`testing one two three ${test}`)
   console.log(`Server listening on ${port}`);
