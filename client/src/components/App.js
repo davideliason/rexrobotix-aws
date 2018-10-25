@@ -35,7 +35,7 @@ class App extends Component {
   return (
     <div>
        <Add />
-       <Button bsStyle="warning" bsSize="small" type="button" onClick={ this.refreshPage }> <span className="glyphicon glyphicon-refresh">refresh</span></Button> 
+       <Button bsStyle="warning" bsSize="small" type="button" onClick={ this.refreshPage }> <span className="glyphicon glyphicon-refresh"> refresh</span></Button> 
 
        <h1>Quotes</h1>
           {this.state.quotes.map(quote =>
