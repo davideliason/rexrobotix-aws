@@ -1,0 +1,29 @@
+{
+  "name": "rexrobotix-aws",
+  "version": "0.1.0",
+  "description": "mern with aws",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/davideliason/rexrobotix-aws.git"
+  },
+  "keywords": [
+    "mern"
+  ],
+  "author": "David Eliason",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/davideliason/rexrobotix-aws/issues"
+  },
+  "homepage": "https://github.com/davideliason/rexrobotix-aws#readme",
+  "dependencies": {
+    "dotenv": "^6.1.0",
+    "express": "^4.16.4",
+    "morgan": "^1.9.1",
+    "path": "^0.12.7"
+  }
+}
