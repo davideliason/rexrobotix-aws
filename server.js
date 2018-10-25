@@ -40,6 +40,16 @@ MongoClient.connect(uri, { useNewUrlParser: true }, (err, database) => {
         });
     });
 
+    app.post('/newUserInfo', (req,res)=>{
+        db.collection('users').insertOne(
+            {
+            "_id" : req.body.name + req.body.quote,
+			 "name" : req.body.name,
+			 "quote" : req.body.quote
+            }
+        )
+    })
+
     // Catchall handler for any other requests --> CRA index.html
     app.get('*', (req, res) => {
         res.sendFile(path.join(__dirname+'/client/build/index.html'));
