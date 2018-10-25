@@ -14,15 +14,23 @@ app.use(express.static(path.join(__dirname, 'client/build')));
 
 MongoClient.connect(uri, { useNewUrlParser: true }, (err, database) => {
     console.log("db connection");
+    db = database.db('rexrobotix-aws');
 
     app.get('/api/users', (req,res) => {
-        res.json([{
-            id: 1,
-            username: "David"
-        }, {
-            id: 2,
-            username: "Johnny"
-        }]);
+        // res.json([{
+        //     id: 1,
+        //     username: "David"
+        // }, {
+        //     id: 2,
+        //     username: "Johnny"
+        // }]);
+
+        db.collection('users').find().toArray( (err,users)=>{
+            // res.render('index.ejs', { users: quotes})
+  
+            // back to serving data as JSON as API
+            res.json(users);
+        });
     });
 
     // Catchall handler for any other requests --> CRA index.html
