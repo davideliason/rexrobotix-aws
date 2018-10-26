@@ -7,6 +7,10 @@ This is a Single Page App (SPA) using the MERN stack to provide CRUD functionali
 
 Express server is at port 8080, and the react client uses a proxy to connect to the server using a production build.
 
+Please note that this is a working codebase but since I am developing within the AWS Free Tier, I am using my EC2 instance for my "real" app, which is www.360enlight.com 
+
+The code for this repo was used to explore working with the technologies used for that project.
+
 ### How
 
 1. Created Custom VPC with 10.0.0.0/16 CIDR block 2 subnets in different Availability Zones (AZ)
@@ -55,7 +59,7 @@ Express server is at port 8080, and the react client uses a proxy to connect to 
 6.0 Server-side
   6.1 created simple express server instance and spun up on 8080, route53 worked correctly displaying server output with mongoDB connection accessing collection
   6.2 created CRA build on remote server, then spun up server to serve those files
-  6.3 
+  6.3 added another route, this one to handle POST coming from the submitted Add component
   
 
 
